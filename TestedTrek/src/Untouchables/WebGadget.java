@@ -1,4 +1,4 @@
-﻿package Untouchables;
+package Untouchables;
 
 public final class WebGadget {
 

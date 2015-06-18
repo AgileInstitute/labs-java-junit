@@ -1,4 +1,4 @@
-﻿package Tests;
+package Tests;
 
 import java.lang.reflect.Method;
 import java.util.Random;
