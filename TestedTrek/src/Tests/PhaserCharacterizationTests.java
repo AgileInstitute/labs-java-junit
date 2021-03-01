@@ -27,7 +27,7 @@ public class PhaserCharacterizationTests {
         context = new MockGalaxy();
         context.setValueForTesting("command", "phaser");
     }
-    
+
     @Test
     public void gameHasFireWeaponSignatureExpectedBySampleClient() {
     	String expectedSignature = "public void StarTrek.Game.fireWeapon(Untouchables.WebGadget)";
@@ -36,7 +36,9 @@ public class PhaserCharacterizationTests {
     		if (expectedSignature.equals(next.toString()))
     			found = true;
     	}
-		Assert.assertTrue("The following signature must exist else clients will not compile: " + expectedSignature, found);
+		  Assert.assertTrue(
+        "The following signature must exist else clients will not compile: " + expectedSignature,
+        found);
     }
 
     @Test
@@ -88,4 +90,3 @@ public class PhaserCharacterizationTests {
     }
 
 }
-
