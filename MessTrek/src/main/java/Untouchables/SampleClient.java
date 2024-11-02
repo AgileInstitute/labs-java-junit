@@ -1,4 +1,4 @@
-﻿package Untouchables;
+package Untouchables;
 
 import java.io.IOException;
 import StarTrek.Game;

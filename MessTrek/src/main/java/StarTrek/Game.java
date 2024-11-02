@@ -1,4 +1,4 @@
-﻿package StarTrek;
+package StarTrek;
 
 import java.util.Random;
 import Untouchables.WebGadget;
