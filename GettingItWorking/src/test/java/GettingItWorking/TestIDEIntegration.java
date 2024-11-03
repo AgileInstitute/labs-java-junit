@@ -3,9 +3,9 @@ package GettingItWorking;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class TestIDEIntegration {
+class TestIDEIntegration {
     @Test
-    public void firstExample() {
+    void firstExample() {
         Assertions.assertEquals("happy?", "HAPPY?".toLowerCase());
     }
 }

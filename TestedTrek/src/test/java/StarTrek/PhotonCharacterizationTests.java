@@ -7,24 +7,24 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Random;
 
-public class PhotonCharacterizationTests {
+class PhotonCharacterizationTests {
     private Game game;
     private MockGalaxy context;
 
     @AfterEach
-    public void RemoveTheMockRandomGeneratorForOtherTests_IReallyWantToRefactorThatStaticVariableSoon() {
+    void RemoveTheMockRandomGeneratorForOtherTests_IReallyWantToRefactorThatStaticVariableSoon() {
         Game.generator = new Random();
     }
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         game = new Game();
         context = new MockGalaxy();
         context.setValueForTesting("command", "photon");
     }
 
     @Test
-    public void NotifiedIfNoTorpedoesRemain() {
+    void NotifiedIfNoTorpedoesRemain() {
         game.setTorpedoes(0);
         context.setValueForTesting("target", new MockKlingon(2000, 200));
         game.fireWeapon(context);
@@ -33,7 +33,7 @@ public class PhotonCharacterizationTests {
     }
 
     @Test
-    public void TorpedoMissesDueToRandomFactors() {
+    void TorpedoMissesDueToRandomFactors() {
         int distanceWhereRandomFactorsHoldSway = 2500;
         context.setValueForTesting("target", new MockKlingon(distanceWhereRandomFactorsHoldSway, 200));
         Game.generator = new MockRandom(); // without this the test would often fail
@@ -44,7 +44,7 @@ public class PhotonCharacterizationTests {
     }
 
     @Test
-    public void TorpedoMissesDueToDistanceAndCleverKlingonEvasiveActions() {
+    void TorpedoMissesDueToDistanceAndCleverKlingonEvasiveActions() {
         int distanceWhereTorpedoesAlwaysMiss = 3500;
         context.setValueForTesting("target", new MockKlingon(distanceWhereTorpedoesAlwaysMiss, 200));
         game.fireWeapon(context);
@@ -54,7 +54,7 @@ public class PhotonCharacterizationTests {
     }
 
     @Test
-    public void TorpedoDestroysKlingon() {
+    void TorpedoDestroysKlingon() {
         MockKlingon klingon = new MockKlingon(500, 200);
         context.setValueForTesting("target", klingon);
         Game.generator = new MockRandom();
@@ -67,7 +67,7 @@ public class PhotonCharacterizationTests {
     }
 
     @Test
-    public void TorpedoDamagesKlingon() {
+    void TorpedoDamagesKlingon() {
         context.setValueForTesting("target", new MockKlingon(500, 2000));
         Game.generator = new MockRandom();
         game.fireWeapon(context);
