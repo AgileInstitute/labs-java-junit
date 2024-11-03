@@ -1,4 +1,4 @@
-import StarTrek.Klingon;
+package StarTrek;
 
 
 public class MockKlingon extends Klingon {

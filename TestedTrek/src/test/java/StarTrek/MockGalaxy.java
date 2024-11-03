@@ -1,6 +1,6 @@
-import java.util.HashMap;
+package StarTrek;
 
-import StarTrek.Galaxy;
+import java.util.HashMap;
 
 public class MockGalaxy extends Galaxy {
     private HashMap<String, Object> stuff = new HashMap<String, Object>();

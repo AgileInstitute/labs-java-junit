@@ -1,7 +1,8 @@
+package StarTrek;
+
 import java.lang.reflect.Method;
 import java.util.Random;
 
-import StarTrek.Game;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
